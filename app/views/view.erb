@@ -1,6 +1,7 @@
 <h1><%= @post.title %></h1>
 <ul class="nav pull-right">
 <li><a href="/">Home</a></li>
+<li><a href="/posts/edit/<%= @post.id %>">Edit post</a></li>
 <li><a href="/posts/destroy/<%= @post.id %>">Delete Post</a></li>
 </ul>
 <p><%= @post.body %></p>

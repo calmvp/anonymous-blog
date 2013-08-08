@@ -17,6 +17,16 @@ get "/posts/destroy/:id" do
   redirect "/"
 end
 
+get "/posts/edit/:id" do
+  @post = Post.find(params[:id])
+  erb :edit
+end
+
+post "/posts/edit/:id" do
+  Post.find(params[:id]).update_attributes(params[:post])
+  redirect "/"
+end
+
 get "/posts/:id" do
   @post = Post.find(params[:id])
   erb :view
