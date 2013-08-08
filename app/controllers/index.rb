@@ -1,12 +1,7 @@
 get "/" do
-  erb :"posts/index"
+  @posts = Post.order('created_at DESC')
+  @tags = Tag.order('title ASC')
+  erb :index
 end
 
-get "/posts/create" do
-end
 
-post "/posts" do
-end
-
-get "/posts/:id" do
-end

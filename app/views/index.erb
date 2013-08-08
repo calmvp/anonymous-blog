@@ -1,1 +1,19 @@
-
+<class="container">
+<h1>Deep Thoughts With Steven Seagal</h1>
+<li><a href="/posts/create">New Post</a></li>
+<ul>
+<% if @posts %>  
+<% @posts.each do |post| %>
+  <li>
+    <h4><a href="/posts/<%= post.id %>"><%= post.title %></a></h4>
+    <p>Created: <%= post.created_at %></p>
+  </li>
+<% end %>
+<% end %>
+</ul>
+<% if @tags %>
+<% @tags.each do |tag| %>
+  <p><a href="/tags/<%= tag.id%>"><%= tag.title %></a></p>
+<% end %>
+<% end %>
+</class>
