@@ -3,7 +3,8 @@ get "/posts/create" do
 end
 
 post "/posts" do
-  @post = Post.create(params[:post])
+  @post = Post.new(params[:post])
+  @post.save
   redirect "/posts/#{@post.id}"
 end
 
